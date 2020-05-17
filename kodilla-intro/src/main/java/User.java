@@ -6,10 +6,10 @@ public class User {
         this.name = name;
         this.age = age;
     }
-    public String getName(String name) {
+    public String getName() {
         return name;
     }
-    public int getAge(int age) {
+    public int getAge() {
         return age;
     }
 
@@ -21,14 +21,16 @@ public class User {
 
         User[] users = {kate, anna, mike, david};
 
-        int result = 0;
+        double result = 0;
         for(int i = 0; i < users.length; i++) {
-            result = result + users[i]; //nie wiem jak odwołać się tutaj do zmiennej "age", żeby sumowała się tylko ta zmienna?
-
+            result = (result + users[i].getAge())/users.length;
+            return result;
         }
 
-
-
+        for(int i = 0; i < users.length; i++) {
+            if(users[i].getAge() < result) {
+                System.out.println(users[i].getName());
+            }
+        }
     }
-
 }
