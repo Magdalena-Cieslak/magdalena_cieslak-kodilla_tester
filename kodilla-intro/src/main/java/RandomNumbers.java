@@ -17,17 +17,18 @@ public class RandomNumbers {
     }
 
     static int returnMaxNumber(int max, int randomInt) {
-        int max <=30;
         if (max >= randomInt) {
             return max;
+        } else {
+            return randomInt;
         }
     }
 
     static int returnMinNumber(int min, int randomInt) {
-        int min >=0;
-        int min <30;
         if (min <= randomInt) {
             return min;
+        } else {
+            return randomInt;
         }
     }
 }
