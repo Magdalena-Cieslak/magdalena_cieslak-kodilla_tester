@@ -1,4 +1,8 @@
 package com.kodilla.abstracts.homework;
 
-public class Shape {
+public abstract class Shape {
+
+    public abstract void surfaceArea();
+
+    public abstract int circuit();
 }
