@@ -2,8 +2,6 @@ package com.kodilla.abstracts.homework;
 
 public class Square extends Shape {
 
-    int surface;
-    int circuit;
 
     public Square(int sideA, int sideB, int sideC) {
         super(sideA, sideB, sideC);

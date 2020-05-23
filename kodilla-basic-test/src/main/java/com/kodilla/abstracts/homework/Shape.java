@@ -5,6 +5,8 @@ public abstract class Shape {
     private int sideA;
     private int sideB;
     private int sideC;
+    private int surface;
+    private int circuit;
 
     public Shape(int sideA, int sideB, int sideC) {
         this.sideA = sideA;
@@ -13,7 +15,7 @@ public abstract class Shape {
     }
 
     public int getSideA() {
-        return sideA();
+        return sideA;
     }
 
     public int getSideB() {
@@ -21,10 +23,10 @@ public abstract class Shape {
     }
 
     public int getSideC() {
-        return sideC();
+        return sideC;
     }
 
     public abstract void surfaceArea();
 
-    public abstract int circuit();
+    public abstract void circuit();
 }
