@@ -7,6 +7,10 @@ public class RunSystem {
 
         Windows windows = new Windows(2000);
         system.displayYearOfPublishment();
+
+        Linux linux = new Linux(1995);
+        linux.turnOn();
+        linux.displayYearOfPublishment();
     }
 
 }
