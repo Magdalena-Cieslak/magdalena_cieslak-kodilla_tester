@@ -2,45 +2,59 @@ package com.kodilla.basic_assertion;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.Callable;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTestSuite {
+    Calculator calculator = new Calculator();
 
     @Test
     public void testSum() {
-        Calculator calculator = new Calculator();
+
+        //Given
         int a = 5;
         int b = 8;
+
+        //When
         int sumResult = calculator.sum(a, b);
+
+        //Then
         assertEquals(13, sumResult);
     }
 
     @Test
     public void testSubtract() {
-        Calculator calculator1 = new Calculator();
+
+        //Given
         int a = 9;
         int b = 12;
-        int subtractResult = calculator1.subtract(a, b);
+
+        //When
+        int subtractResult = calculator.subtract(a, b);
+
+        //Then
         assertEquals(-3, subtractResult);
     }
 
     @Test
     public void testSquare() {
-        Calculator calculator2 = new Calculator();
+
+        //Given
         int a = -2;
-        int squareResult = calculator2.square(a);
+
+        //When
+        int squareResult = calculator.square(a);
+
+        //Then
         assertEquals(4, squareResult);
 
+        //Given
         int b = 0;
-        int squareResult1 = calculator2.square(b);
+
+        //When
+        int squareResult1 = calculator.square(b);
+
+        //Then
         assertEquals(0, squareResult1);
-
-        int c = 3;
-        int squareResalt2 = calculator2.square(c);
-        assertEquals(9, squareResalt2);
-
     }
 
 }
