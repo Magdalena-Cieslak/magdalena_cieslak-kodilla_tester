@@ -46,15 +46,5 @@ public class CalculatorTestSuite {
 
         //Then
         assertEquals(4, squareResult);
-
-        //Given
-        int b = 0;
-
-        //When
-        int squareResult1 = calculator.square(b);
-
-        //Then
-        assertEquals(0, squareResult1);
     }
-
 }
