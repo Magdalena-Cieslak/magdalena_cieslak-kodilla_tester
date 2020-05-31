@@ -19,5 +19,10 @@ public class CarsListApplication {
             System.out.println(CarUtils.describeCar(Car cars));
         }
 
+        cars.remove(1);
+        Ford ford = new Ford(110);
+        cars.remove(ford);
+
+
     }
 }
