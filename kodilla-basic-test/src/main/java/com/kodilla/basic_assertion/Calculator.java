@@ -2,12 +2,12 @@ package com.kodilla.basic_assertion;
 
 public class Calculator {
 
-    public int sumNumbers(int a, int b) {
+    public int sum(int a, int b) {
         int sum = a + b;
         return sum;
     }
 
-    public int subtractNumbers(int a, int b) {
+    public int subtract(int a, int b) {
         int subtract = a - b;
         return subtract;
     }
