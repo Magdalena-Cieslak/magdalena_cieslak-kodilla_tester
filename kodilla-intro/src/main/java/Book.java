@@ -11,9 +11,8 @@ public class Book {
         Book book = new Book("Mickiewicz", "Dziady");
     }
 
-    public static String of(String author, String title) {
+    public static Book of(String author, String title) {
         Book book = new Book(author, title);
         return book;
-
     }
 }

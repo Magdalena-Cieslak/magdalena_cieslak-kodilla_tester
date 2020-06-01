@@ -6,7 +6,7 @@ public class Colors {
         Scanner scanner = new Scanner(System.in);
         while(true) {
             String letter = scanner.nextLine().trim();
-            if (letter.length() = 1) {
+            if (letter.length() == 1) {
                 return letter;
             }
             System.out.println("It's not correct. Try again.");
@@ -23,7 +23,7 @@ public class Colors {
                     break;
                 case "B" :
                     System.out.println("Your color is black.");
-                    break
+                    break;
                 case "R" :
                     System.out.println("Your color is red.");
                     break;

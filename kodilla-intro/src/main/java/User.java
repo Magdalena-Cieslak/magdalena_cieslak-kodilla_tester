@@ -26,8 +26,8 @@ public class User {
         double result = 0;
         for (int i = 0; i < users.length; i++) {
             result = (result + users[i].getAge()) / users.length;
-            return result;
         }
+        System.out.println(result);
 
         for (int i = 0; i < users.length; i++) {
             if (users[i].getAge() < result) {
