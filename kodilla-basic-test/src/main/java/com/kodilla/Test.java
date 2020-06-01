@@ -2,7 +2,7 @@ package com.kodilla;
 
 public class Test {
 
-    public int add(int a, int b){
+    public double add(double a, double b){
         return a+b;
     }
 }
