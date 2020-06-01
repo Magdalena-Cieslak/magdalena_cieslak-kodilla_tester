@@ -23,6 +23,8 @@ public class CarsListApplication {
         Ford ford = new Ford(110);
         cars.remove(ford);
 
+        System.out.println(CarUtils.describeCar(Car cars) + "Liczba elementów w kolekcji: " +
+                cars.size());
 
     }
 }
