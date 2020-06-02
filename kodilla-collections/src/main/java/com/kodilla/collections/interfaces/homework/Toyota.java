@@ -21,6 +21,6 @@ public class Toyota implements Car {
     @Override
     public void decreaseSpeed() {
 
-        speed += 50;
+        speed -= 50;
     }
 }
