@@ -14,11 +14,11 @@ public class Toyota implements Car {
 
     @Override
     public void increaseSpeed() {
-        speed = speed + 70;
+        speed += 70;
     }
 
     @Override
     public void decreaseSpeed() {
-        speed = speed + 50;
+        speed += 50;
     }
 }
