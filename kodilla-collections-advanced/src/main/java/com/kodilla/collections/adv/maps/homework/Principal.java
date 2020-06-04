@@ -6,7 +6,7 @@ public class Principal {
     private String firstname;
     private String lastname;
 
-    public Principal(String firstName, String lastName) {
+    public Principal(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
     }
@@ -36,9 +36,8 @@ public class Principal {
     @Override
     public String toString() {
         return "Principal{" +
-                "firstName='" + firstname + '\'' +
-                ", lastName='" + lastname + '\'' +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
                 '}';
     }
-
 }
