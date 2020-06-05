@@ -5,19 +5,16 @@ import java.util.Map;
 
 public class BookManager {
 
+    Map<String, String> library = new HashMap<>();
+
     public Book createBook(String title, String author) {
-        Map<Book, String> library = new HashMap<>();
-        Book book = new Book();
+        Book book = new Book(title, author);
+        library.put(title, author);
 
-        library.put(book, "Sky. John Deep");
-        library.put(book, "Castle. Jane Walls");
-        library.put(book, "Castle. Jane Walls");
-
-        for (Map.Entry<Book, String> books : library.entrySet()) {
-            System.out.println(library.entrySet());
+        for(Map.Entry<String, String> note : library.entrySet()) {
+            System.out.println("Author: " + note.getValue() + ", Title: " + note.getKey());
         }
-        return (Book) library.entrySet();
-
-
+        return book;
     }
 }
+
