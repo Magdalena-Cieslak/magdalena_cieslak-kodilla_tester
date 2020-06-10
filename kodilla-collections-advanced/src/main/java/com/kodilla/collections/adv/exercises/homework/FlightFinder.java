@@ -3,14 +3,23 @@ package com.kodilla.collections.adv.exercises.homework;
 import java.util.*;
 
 public class FlightFinder {
-    Map<String, String> towns = new HashMap<>();
+    List<Flight> flights = new FlightRepository().getFlightsTable();
 
-    public List<Flight> findFlightFrom (String departure) {
-        for(Map.Entry<String, String> note : towns.entrySet()) {
-            if(note.equals(departure)){
-                towns.get(note);
+    public List<Flight> findFlightsFrom(String departure) {
+        for(Flight flight : flights) {
+            if(flight.getDeparture().equals(departure)) {
+                flights.add(flight);
             }
-            System.out.println("Lot na trasie: " + departure + " - " + note);
         }
+        return flights;
+    }
+
+    public List<Flight> findFlightsTo(String arrival) {
+        for(Flight flight : flights) {
+            if(flight.getArrival().equals(arrival)) {
+                flights.add(flight);
+            }
+        }
+        return flights;
     }
 }
