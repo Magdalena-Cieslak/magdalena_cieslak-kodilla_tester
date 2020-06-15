@@ -12,13 +12,11 @@ public class Application {
         students.add(new Student("Tomek Lach", new Teacher("Wiesław Guzek")));
         students.add(new Student("Michał Nowak", null));
 
-        for(Student student : students)
-            System.out.println("Uczeń: " + student.getName() + ", Nauczyciel: " + student.getTeacher());
+        for (Student student : students)
+            System.out.println("Uczeń: " + student.getName() + ", Nauczyciel: "
+                    + student.getTeacher().getName());
 
         Optional<List<Student>> optionalStudents = Optional.ofNullable(students);
-        String teachersName =
-                optionalStudents.orElse(new Student("", new Teacher("<undefined"))).getTeacherName();
-        System.out.println(teachersName);
 
 
     }
