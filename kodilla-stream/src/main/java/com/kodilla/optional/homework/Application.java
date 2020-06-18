@@ -16,8 +16,8 @@ public class Application {
             System.out.println("Uczeń: " + student.getName() + ", Nauczyciel: "
                     + student.getTeacher().getName());
 
-        String teacherName = Optional.ofNullable(Student.getTeacher()) //czy tutaj nie powinno być optionala także po lewej stronie równania?
-                .map(Teacher::getName) // co robi ten zapis? Widzę że mamy tu referencję do metody, ale czemu jest to parametrem map() ?
+        String teacherName = Optional.ofNullable(Student.getTeacher())
+                .map(Teacher::getName)
                 .orElse("Undefined");
     }
 }
