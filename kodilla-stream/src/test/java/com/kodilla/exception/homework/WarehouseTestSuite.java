@@ -7,21 +7,15 @@ import static org.junit.Assert.*;
 public class WarehouseTestSuite {
     @Test
     public void getOrder() throws OrderDoesntExistException {
-        //given
-        Warehouse warehouse = new Warehouse();
-        //when
-        Order orderNumberThree = warehouse.getOrder("three");
-        //then
-        assertTrue(orderNumberThree);
-    }
 
-    @Test (expected = OrderDoesntExistException.class)
-    public void getOrder_withException() throws OrderDoesntExistException {
-        //given
         Warehouse warehouse = new Warehouse();
-        //when
-        Order orderNumberThree = warehouse.getOrder("six");
-        //then
-        assertFalse(orderNumberThree);
+
+        Order one = new Order("one");
+        Order two = new Order("two");
+        warehouse.addOrder(one);
+        warehouse.addOrder(two);
+
+        Order res = warehouse.getOrder("two");
+        assertEquals(two, res);
     }
 }
