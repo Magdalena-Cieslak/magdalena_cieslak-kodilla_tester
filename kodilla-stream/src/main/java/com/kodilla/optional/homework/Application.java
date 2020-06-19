@@ -16,7 +16,7 @@ public class Application {
             System.out.println("Uczeń: " + student.getName() + ", Nauczyciel: "
                     + student.getTeacher().getName());
 
-        String teacherName = Optional.ofNullable(Student.getTeacher())
+        String teacherName = Optional.ofNullable(student.getTeacher())
                 .map(Teacher::getName)
                 .orElse("Undefined");
     }
