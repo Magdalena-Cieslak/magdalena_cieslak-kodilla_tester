@@ -13,12 +13,13 @@ public class Application {
         students.add(new Student("Michał Nowak", null));
 
         for (Student student : students) {
-            System.out.println("Uczeń: " + student.getName() + ", Nauczyciel: "
-                    + student.getTeacher().getName());
 
             String teacherName = Optional.ofNullable(student.getTeacher())
                     .map(Teacher::getName)
                     .orElse("Undefined");
+
+            System.out.println("Uczeń: " + student.getName() + ", Nauczyciel: "
+                    + teacherName);
         }
     }
 }
