@@ -16,6 +16,7 @@ public class Warehouse {
         Optional<Order> optionalOrder = orders.stream()
                 .filter(order -> order.getNumber().equals(number))
                 .findAny();
+
         return optionalOrder.orElseThrow(OrderDoesntExistException::new);
     }
 }
