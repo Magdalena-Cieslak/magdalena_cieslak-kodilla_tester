@@ -36,7 +36,5 @@ public class WarehouseTestSuite {
         //when
         Order result = warehouse.getOrder("three");
 
-        //then
-        assertEquals(expected, result);
-    }
+        }
 }
