@@ -23,7 +23,7 @@ public class WarehouseTestSuite {
         assertEquals(two, result);
     }
 
-    @Test
+    @Test(expected = OrderDoesntExistException.class)
         public void getOrder_withException() throws OrderDoesntExistException {
 
         //given
