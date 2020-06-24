@@ -7,22 +7,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PersonTestSuite {
 
-    Person person_1 = new Person(1.65, 85);
-    Person person_2 = new Person(1.85, 90);
-    Person person_3 = new Person(1.2, 20);
-    Person person_4 = new Person(0.0, 35);
-
     @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_tests.homework.DoubleSources#provideDoubleForTestingBMI")
-    public void shouldCalculateBmi(double input, double expected, double delta) {
+    public void shouldCalculateBmi(double height, double weight, double expected, double delta) {
+        Person person = new Person(height, weight);
 
-        assertEquals(expected, person_1.getBMI());
+        assertEquals(expected, person.getBMI());
     }
 
     @ParameterizedTest
-    @MethodSource(value = "com.kodilla.parametrized_tests.homework.DoubleSourcesWithZero#provideDoubleForTestingBMI")
-    public void shouldNotCalculateBmiWhenHeightIsZero(double input, double expected) {
-        assertEquals(expected, person_4.getBMI());
+    @MethodSource(value = "com.kodilla.parametrized_tests.homework.DoubleSourcesWithZero#provideDoubleWithZeroForTestingBMI")
+    public void shouldNotCalculateBmiWhenHeightIsZero(double height, double weight, String expected, double delta) {
+        Person person = new Person(height, weight);
 
+        assertEquals(expected, person.getBMI());
     }
 }
