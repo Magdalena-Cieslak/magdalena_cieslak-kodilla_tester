@@ -12,7 +12,7 @@ class PersonTestSuite {
     public void shouldCalculateBmi(double height, double weight, double expected) {
         Person person = new Person(height, weight);
 
-        assertEquals(expected, person.getBMI());
+        assertEquals(expected, person.getBMI(), 0.001);
     }
 
     @ParameterizedTest
@@ -20,6 +20,6 @@ class PersonTestSuite {
     public void shouldNotCalculateBmiWhenHeightIsZero(double height, double weight, String expected) {
         Person person = new Person(height, weight);
 
-        assertEquals(expected, person.getBMI());
+        assertEquals(expected, person.getBMI(), 0.001);
     }
 }
