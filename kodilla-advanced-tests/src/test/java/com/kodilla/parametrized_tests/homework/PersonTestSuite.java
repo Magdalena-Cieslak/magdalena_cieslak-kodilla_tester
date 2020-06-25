@@ -20,6 +20,6 @@ class PersonTestSuite {
     public void shouldNotCalculateBmiWhenHeightIsZero(double height, double weight, String expected) {
         Person person = new Person(height, weight);
 
-        assertEquals(expected, person.getBMI(), String.valueOf(0.001));
+        assertEquals(expected, person.getBMI());
     }
 }
