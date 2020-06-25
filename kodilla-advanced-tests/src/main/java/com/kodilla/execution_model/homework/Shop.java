@@ -2,7 +2,10 @@ package com.kodilla.execution_model.homework;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Shop {
     private List<Order> orders = new ArrayList<>();
@@ -11,11 +14,14 @@ public class Shop {
         this.orders.add(order);
     }
 
-    public List<Order> returnOrdersWithinGivenDateRange(LocalDate date) {
-        LocalDate localDate_one = LocalDate.of(2020, 03, 01);
-        LocalDate localDate_two = LocalDate.of(2020, 03, 30);
+    public List<Order> returnOrdersWithinGivenDateRange(LocalDate date_one, LocalDate date_two) {
+//        LocalDate localDate_one = LocalDate.of(2020, 03, 01);
+//        LocalDate localDate_two = LocalDate.of(2020, 03, 30);
 
-        //potrzebuję wskazówki jak zbudować ciało tej metody
+        List<Order> orders = new ArrayList<>()
+                .stream()
+                .filter(o -> (o.getDate()))
+                .collect(Collectors.toList());
 
         return orders;
     }
