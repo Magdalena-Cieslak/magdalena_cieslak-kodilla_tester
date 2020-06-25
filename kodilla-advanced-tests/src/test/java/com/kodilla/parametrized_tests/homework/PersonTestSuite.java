@@ -12,7 +12,7 @@ class PersonTestSuite {
     public void shouldCalculateBmi(double height, double weight, double expected) {
         Person person = new Person(height, weight);
 
-        assertEquals(expected, Double.parseDouble(person.getBMI()), 0.001);
+        assertEquals(expected, person.getBMI());
     }
 
     @ParameterizedTest
