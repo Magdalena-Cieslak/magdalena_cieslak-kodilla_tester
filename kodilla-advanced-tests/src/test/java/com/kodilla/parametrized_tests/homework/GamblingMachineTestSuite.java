@@ -14,30 +14,51 @@ class GamblingMachineTestSuite {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/intNumbersSources_GreaterThanSix.csv")
-    public void shouldThrowExceptionWhenNumberOfNumbersIsGreaterThanSix(Set<Integer> input){
+    public void shouldThrowExceptionWhenNumberOfNumbersIsGreaterThanSix(int one, int two, int three, int four, int five, int six, int seven){
+        Set<Integer> integers = new HashSet<>();
+        integers.add(one);
+        integers.add(two);
+        integers.add(three);
+        integers.add(four);
+        integers.add(five);
+        integers.add(six);
+        integers.add(seven);
+
         InvalidNumbersException thrown = assertThrows(
                 InvalidNumbersException.class,
-                () -> gamblingMachine.howManyWins(input),
+                () -> gamblingMachine.howManyWins(integers),
                 "Expected howManyWins() to throw, but it didnt't"
         );
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/intNumbersSources_LessThanSix.csv")
-    public void shouldThrowExceptionWhenNumberOfNumbersIsLessThanSix(Set<Integer> input) {
+    public void shouldThrowExceptionWhenNumberOfNumbersIsLessThanSix(int one, int two, int three, int four) {
+        Set<Integer> integers = new HashSet<>();
+        integers.add(one);
+        integers.add(two);
+        integers.add(three);
+        integers.add(four);
+
         InvalidNumbersException thrown = assertThrows(
                 InvalidNumbersException.class,
-                () -> gamblingMachine.howManyWins(input),
+                () -> gamblingMachine.howManyWins(integers),
                 "Expected howManyWins() to throw, but it didnt't"
         );
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/intNumbersSources_numbersLessOne.csv")
-    public void shouldThrowExceptionWhenNumbersAreLessThanOne(Set<Integer> input) {
+    public void shouldThrowExceptionWhenNumbersAreLessThanOne(int one, int two, int three, int four) {
+        Set<Integer> integers = new HashSet<>();
+        integers.add(one);
+        integers.add(two);
+        integers.add(three);
+        integers.add(four);
+
         InvalidNumbersException thrown = assertThrows(
                 InvalidNumbersException.class,
-                () -> gamblingMachine.howManyWins(input),
+                () -> gamblingMachine.howManyWins(integers),
                 "Expected howManyWins() to throw, but it didnt't"
         );
     }
