@@ -9,7 +9,7 @@ class PersonTestSuite {
 
     @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_tests.homework.DoubleSources#provideDoubleForTestingBMI")
-    public void shouldCalculateBmi(double height, double weight, double expected) {
+    public void shouldCalculateBmi(double height, double weight, String expected) {
         Person person = new Person(height, weight);
 
         assertEquals(expected, person.getBMI());

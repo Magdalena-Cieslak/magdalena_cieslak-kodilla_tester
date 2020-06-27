@@ -8,9 +8,9 @@ public class DoubleSources {
 
     static Stream<Arguments> provideDoubleForTestingBMI() {
         return Stream.of(
-                Arguments.of(1.5, 65.0, 28.90),
-                Arguments.of(1,85, 75.0, 21.90),
-                Arguments.of(1.2, 18.0, 12.50)
+                Arguments.of(1.5, 65.0, "Overweight"),
+                Arguments.of(1.85, 75.0, "Normal (healthy weight)"),
+                Arguments.of(1.2, 18.0, "Very severely underweight")
         );
     }
 }
