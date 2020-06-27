@@ -14,7 +14,7 @@ public class Order {
         this.login = login;
     }
 
-    public double getValue() {
+    public int getValue() {
         return value;
     }
 
