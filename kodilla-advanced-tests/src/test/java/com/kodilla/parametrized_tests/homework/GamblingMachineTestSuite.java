@@ -76,7 +76,7 @@ class GamblingMachineTestSuite {
         integers.add(six);
 
         int result = gamblingMachine.howManyWins(integers);
-        Assertions.assertTrue(integers.size() >= 0);
-        Assertions.assertTrue(integers.size() <= 6);
+        Assertions.assertTrue(result >= 0);
+        Assertions.assertTrue(result <= 6);
     }
 }
