@@ -14,24 +14,20 @@ public class Shop {
 
     public List<Order> returnOrdersWithinGivenDateRange(LocalDate date_one, LocalDate date_two) {
         List<Order> filteredList;
-        List<Order> ordersList = new ArrayList<>();
-        filteredList = ordersList.stream()
-                .map(order -> order.getDate())
-                .filter(date -> date.isAfter(date_one))
-                .filter(date -> date.isBefore(date_two))
-                .map()    //nie wiem jakie działanie tu zrobić, żeby z przefiltrowanych dat wrócić do zamówień z tych dat
+        filteredList = this.orders.stream()
+                .filter(order -> order.getDate().isAfter(date_one))
+                .filter(order -> order.getDate().isBefore(date_two))
                 .collect(Collectors.toList());
         return filteredList;
     }
 
-    public void getOrder(int valueMin, int valueMax) {
-        //List<Order> filteredList;
-        List<Order> orders = new ArrayList<>();
-        orders.stream()
-                .map(order -> order.getValue())
-                .filter(order -> (order >= valueMin))
-                .filter(order -> (order <= valueMax))
+    public List<Order> returnOrdersWithinGivenValueRange(int valueMin, int valueMax) {
+        List<Order> filteredList;
+        filteredList = this.orders.stream()
+                .filter(order -> (order.getValue() >= valueMin))
+                .filter(order -> (order.getValue() <= valueMax))
                 .collect(Collectors.toList());
+        return filteredList;
     }
 
     public int getSize() {
@@ -39,8 +35,7 @@ public class Shop {
     }
 
     public void sumOrderValues() {
-        List<Order> orders = new ArrayList<>();
-        orders.stream()
+        this.orders.stream()
                 .map(order -> order.getValue())
                 .mapToInt(n -> n)
                 .sum();
