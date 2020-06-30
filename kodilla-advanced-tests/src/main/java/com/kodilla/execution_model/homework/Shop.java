@@ -34,11 +34,13 @@ public class Shop {
         return this.orders.size();
     }
 
-    public void sumOrderValues() {
-        this.orders.stream()
+    public int sumOrderValues() {
+        int sumValues;
+        sumValues = this.orders.stream()
                 .map(order -> order.getValue())
                 .mapToInt(n -> n)
                 .sum();
+        return sumValues;
     }
 }
 
