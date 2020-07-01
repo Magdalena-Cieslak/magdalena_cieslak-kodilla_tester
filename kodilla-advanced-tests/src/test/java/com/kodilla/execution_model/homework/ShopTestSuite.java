@@ -1,5 +1,6 @@
 package com.kodilla.execution_model.homework;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -29,8 +30,8 @@ public class ShopTestSuite {
         List<Order> result = shop.returnOrdersWithinGivenDateRange(LocalDate.of(2020,01, 01), LocalDate.of(2020, 03,01));
 
         //then
-        assertEquals(2020-02-20, result);
-        assertEquals(2020-02-05, result);
+        assertEquals(LocalDate.of(2020, 02, 20), result);
+        assertEquals(LocalDate.of(2020, 02, 05), result);
     }
 
     @Test
@@ -50,5 +51,11 @@ public class ShopTestSuite {
 
         //then
         assertEquals(1570, sum);
+    }
+    @BeforeEach
+    public void initializeShop() {
+        shop.addOrder(books);
+        shop.addOrder(shoes);
+        shop.addOrder(notebook);
     }
 }
