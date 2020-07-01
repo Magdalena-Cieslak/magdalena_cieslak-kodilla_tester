@@ -30,8 +30,7 @@ public class ShopTestSuite {
         List<Order> result = shop.returnOrdersWithinGivenDateRange(LocalDate.of(2020,01, 01), LocalDate.of(2020, 03,01));
 
         //then
-        assertEquals(LocalDate.of(2020, 02, 20), result);
-        assertEquals(LocalDate.of(2020, 02, 05), result);
+        assertEquals(2, result.size());
     }
 
     @Test
@@ -40,8 +39,7 @@ public class ShopTestSuite {
         List<Order> result = shop.returnOrdersWithinGivenValueRange(100, 500);
 
         //then
-        assertEquals(120, result);
-        assertEquals(250, result);
+        assertEquals(2, result.size());
     }
 
     @Test
