@@ -22,16 +22,19 @@ public class WeatherNotificationServiceTestSuite {
 
     @Test
     public void subscribeClientCanRemoveNotificationFromGivenLocation() {
+        Location location_02 = Mockito.mock(Location.class);
+        Location location_03 = Mockito.mock(Location.class);
+
         weatherNotificationService.addSubscriber(location, weatherClient);
-        weatherNotificationService.addSubscriber(location, weatherClient);
-        weatherNotificationService.addSubscriber(location, weatherClient);
+        weatherNotificationService.addSubscriber(location_02, weatherClient);
+        weatherNotificationService.addSubscriber(location_03, weatherClient);
 
         WeatherNotification weatherNotification_02 = Mockito.mock(WeatherNotification.class);
         WeatherNotification weatherNotification_03 = Mockito.mock(WeatherNotification.class);
 
-        weatherNotificationService.removeLocation(location, weatherNotification);
-        weatherNotificationService.sendNotification(location, weatherNotification_02);
-        weatherNotificationService.sendNotification(location,weatherNotification_03);
+        weatherNotificationService.removeLocation(location);
+        weatherNotificationService.sendNotification(location_02, weatherNotification_02);
+        weatherNotificationService.sendNotification(location_03, weatherNotification_03);
 
         Mockito.verify(weatherClient, Mockito.never()).receive(weatherNotification);
         Mockito.verify(weatherClient, Mockito.times(1)).receive(weatherNotification_02);
@@ -40,9 +43,12 @@ public class WeatherNotificationServiceTestSuite {
 
     @Test
     public void subscribeClientCanRemoveNotificationFromAllLocations() {
+        Location location_01 = Mockito.mock(Location.class);
+        Location location_02 = Mockito.mock(Location.class);
+
         weatherNotificationService.addSubscriber(location, weatherClient);
-        weatherNotificationService.addSubscriber(location, weatherClient);
-        weatherNotificationService.addSubscriber(location, weatherClient);
+        weatherNotificationService.addSubscriber(location_01, weatherClient);
+        weatherNotificationService.addSubscriber(location_02, weatherClient);
 
         WeatherNotification weatherNotification_02 = Mockito.mock(WeatherNotification.class);
         WeatherNotification weatherNotification_03 = Mockito.mock(WeatherNotification.class);

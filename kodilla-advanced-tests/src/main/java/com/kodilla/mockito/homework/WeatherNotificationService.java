@@ -26,12 +26,12 @@ public class WeatherNotificationService {
         }
     }
 
-    public void removeLocation(Location location, WeatherNotification weatherNotification) {
-        this.weatherClients.remove(location, weatherNotification);
+    public void removeLocation(Location location) {
+        this.weatherClients.remove(location);
     }
 
     public void removeSubscriber(WeatherClient weatherClient) {
-        this.weatherClients.values().forEach(weatherClients -> weatherClients.removeAll(weatherClients));
+        this.weatherClients.values().forEach(weatherClients -> weatherClients.remove(weatherClient));
     }
 }
 
