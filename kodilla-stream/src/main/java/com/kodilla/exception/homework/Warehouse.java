@@ -8,7 +8,7 @@ public class Warehouse {
     List<Order> orders = new ArrayList<>();
 
     public List<Order> addOrder(Order order) {
-        orders.add(new Order(order.getNumber()));
+        orders.add(order);
         return orders;
     }
 
