@@ -30,12 +30,12 @@ public class Calculator {
     }
 
     public double divide(double a, double b) {
-        double div = a / b;
         if(b != 0) {
+            double div = a / b;
             display.display(div);
         } else {
             System.out.println("Value b can not be zero");
         }
-        return div;
+        return (a / b);
     }
 }
