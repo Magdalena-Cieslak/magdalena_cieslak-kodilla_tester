@@ -13,7 +13,7 @@ public class ShippingCenterTestSuite {
     public void shouldSendPackage() {
         ApplicationContext context = new AnnotationConfigApplicationContext();
         DeliveryService bean = context.getBean(DeliveryService.class);
-        boolean value = bean.deliveryPackage("NY City", 20.5);
+        boolean value = bean.deliveryPackage("NY City", 35.5);
         Assertions.assertTrue(true);
     }
 
