@@ -11,9 +11,9 @@ public class ShippingCenterTestSuite {
 
     @Test
     public void shouldSendPackage() {
-        ApplicationContext context = new AnnotationConfigApplicationContext();
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
         ShippingCenter bean = context.getBean(ShippingCenter.class);
         String value = bean.sendPackage("NY City", 35.5);
-        Assertions.assertEquals("Package delivery to [NY City]", value);
+        Assertions.assertEquals("Package delivery to: NY City", value);
     }
 }
