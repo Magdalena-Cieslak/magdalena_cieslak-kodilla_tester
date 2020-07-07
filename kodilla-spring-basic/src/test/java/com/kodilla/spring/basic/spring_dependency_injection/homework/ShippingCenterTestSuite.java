@@ -12,9 +12,8 @@ public class ShippingCenterTestSuite {
     @Test
     public void shouldSendPackage() {
         ApplicationContext context = new AnnotationConfigApplicationContext();
-        DeliveryService bean = context.getBean(DeliveryService.class);
-        boolean value = bean.deliveryPackage("NY City", 35.5);
-        Assertions.assertTrue(true);
+        ShippingCenter bean = context.getBean(ShippingCenter.class);
+        String value = bean.sendPackage("NY City", 35.5);
+        Assertions.assertEquals("Package delivery to [NY City]", value);
     }
-
 }
