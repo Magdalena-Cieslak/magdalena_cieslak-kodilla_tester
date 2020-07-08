@@ -16,7 +16,7 @@ public class CarFactoryTestSuite {
     @Test
     public void shouldChooseCarDependingOnDate() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
         Car car = (Car) context.getBean("chooseCarDependingOnDate");
         //When
         String type = car.getCarType();

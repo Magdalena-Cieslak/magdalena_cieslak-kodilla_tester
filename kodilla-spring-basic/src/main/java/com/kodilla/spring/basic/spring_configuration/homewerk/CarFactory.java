@@ -3,14 +3,15 @@ package com.kodilla.spring.basic.spring_configuration.homewerk;
 import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class CarFactory {
 
     @Bean
-    public Car chooseCarDependingOnDate(LocalDate localDate) {
+    public Car chooseCarDependingOnDate() {
         Car car;
-        localDate = LocalDate.now();
+        LocalDate localDate = LocalDate.now();
 
         if(localDate.isAfter(LocalDate.of(2020, 6, 20)) &&
         localDate.isBefore(LocalDate.of(2020, 9, 22))) {
