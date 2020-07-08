@@ -1,11 +1,12 @@
 package com.kodilla.spring.basic.spring_configuration.homewerk;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+@Configuration
 public class CarFactory {
 
     @Bean
@@ -13,11 +14,11 @@ public class CarFactory {
         Car car;
         LocalDate localDate = LocalDate.now();
 
-        if(localDate.isAfter(LocalDate.of(2020, 6, 20)) &&
-        localDate.isBefore(LocalDate.of(2020, 9, 22))) {
+        if (localDate.isAfter(LocalDate.of(2020, 6, 20)) &&
+                localDate.isBefore(LocalDate.of(2020, 9, 22))) {
             car = new Cabrio();
-        } else if(localDate.isAfter(LocalDate.of(2020, 12, 21)) &&
-        localDate.isBefore(localDate.of(2021, 03, 20))) {
+        } else if (localDate.isAfter(LocalDate.of(2020, 12, 21)) &&
+                localDate.isBefore(localDate.of(2021, 03, 20))) {
             car = new SUV();
         } else {
             car = new Sedan();
@@ -29,7 +30,7 @@ public class CarFactory {
         boolean lights;
         localTime = LocalTime.now();
 
-        if(localTime.isAfter(LocalTime.of(20, 00)) &&
+        if (localTime.isAfter(LocalTime.of(20, 00)) &&
                 localTime.isBefore(localTime.of(6, 00))) {
             lights = true;
         } else {
