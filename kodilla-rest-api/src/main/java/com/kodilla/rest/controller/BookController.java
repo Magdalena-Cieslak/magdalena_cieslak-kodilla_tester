@@ -28,7 +28,7 @@ public class BookController {
     }
 
     @DeleteMapping
-    public void removeBook(@RequestBody int bookId) {
+    public void removeBook(@PathVariable int bookId) {
 
         bookService.removeBook(bookId);
     }
