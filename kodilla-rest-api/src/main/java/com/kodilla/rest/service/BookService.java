@@ -18,7 +18,7 @@ public class BookService {
         books.add(bookDto);
     }
 
-    public void removeBook(int bookId) {
+    public void removeBook(Integer bookId) {
         books.remove(books.get(bookId));
     }
 }

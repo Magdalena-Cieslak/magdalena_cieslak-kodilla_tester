@@ -27,8 +27,8 @@ public class BookController {
         bookService.addBook(bookDto);
     }
 
-    @DeleteMapping
-    public void removeBook(@PathVariable int bookId) {
+    @DeleteMapping(value = "/{bookId}")
+    public void removeBook(@PathVariable Integer bookId) {
 
         bookService.removeBook(bookId);
     }
