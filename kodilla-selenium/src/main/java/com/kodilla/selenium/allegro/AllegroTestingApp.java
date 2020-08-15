@@ -16,12 +16,15 @@ public class AllegroTestingApp {
         }
         driver.findElement(By.xpath("//html/body/div/div/div/div/div/div[2]/button[2]")).click();
 
-        WebElement categoryCombo = driver.findElement(By.xpath("//div[@class=\"mp7g_oh mr3m_1 _r65gb\"]/select/optgroup"));
-        Select categorySelect = new Select(categoryCombo);
-        categorySelect.selectByValue("Elektronika");
-
         WebElement inputField = driver.findElement(By.xpath("//div[@data-box-name=\"allegro.metrumHeader.search\"]/div/form/input"));
         inputField.sendKeys("mavic mini");
+
+        WebElement categoryDropdown = driver.findElement(By.xpath("/html/body/div/div/header/div/div/div/div/form/div[2]/div/select"));
+        Select categorySelect = new Select(categoryDropdown);
+        categorySelect.selectByIndex(3);
+
+        inputField = driver.findElement(By.xpath("//div[@data-box-name=\"allegro.metrumHeader.search\"]/div/form/button"));
         inputField.submit();
+
     }
 }
