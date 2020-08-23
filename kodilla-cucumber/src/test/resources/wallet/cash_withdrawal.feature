@@ -19,3 +19,8 @@ Feature: Cash Withdrawal
     When I withdraw $200
     Then nothing should be dispensed
     And I should be told that I don't have enough money in my wallet
+
+  Scenario: User checks the balance of their wallet
+    Given there is $100 in my wallet
+    When I check the balance of my wallet
+    Then I should see that the balance is $100

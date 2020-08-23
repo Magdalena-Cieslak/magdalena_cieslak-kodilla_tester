@@ -53,5 +53,13 @@ public class WalletSteps implements En {
             Assert.assertNotEquals(100, wallet.getBalance());
         });
 
+
+        When("I check the balance of my wallet", () -> {
+            wallet.getBalance();
+        });
+        Then("I should see that the balance is $100", () -> {
+            System.out.println("The balance is " + wallet.getBalance());
+        });
+
     }
 }
